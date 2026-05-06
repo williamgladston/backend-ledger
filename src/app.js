@@ -21,7 +21,18 @@ const transactionRoutes = require("./routes/transaction.routes")
  */
 
 app.get("/", (req, res) => {
-    res.send("Ledger Service is up and running")
+    res.send("Ledger Service is up and running",
+        "\n Authentication APIs (/api/auth)",
+    " \nPOST /api/auth/register",
+    " \nPOST /api/auth/login",
+    " \nPOST /api/auth/logout",
+    " \nAccount APIs (/api/accounts)",
+    "\n GET /api/accounts/balance/:accountId",
+    "\n GET /api/accounts/",
+    "\n Transaction APIs (/api/transactions)",
+    "\n POST /api/transactions/",
+    "\n POST /api/transactions/system/initial-funds"
+)
 })
 
 app.use("/api/auth", authRouter)
